@@ -32,7 +32,7 @@ MainWidget::MainWidget(QWidget *parent) : QDockWidget("MonkeyBenQ's SmashGG Plug
         
     this->label1->setText("");
     //https://www.start.gg/tournament/api-testing-3/event/dev-testing/brackets/1534774/2307767
-    this->lineedit->setText("TOURNEY LINK");
+    this->lineedit->setText("TOURNEY");
     this->submit_button->setText("Submit");
     this->start_button->setText("Press to Start");
     this->eventoptions->setVisible(false);
@@ -48,10 +48,12 @@ MainWidget::MainWidget(QWidget *parent) : QDockWidget("MonkeyBenQ's SmashGG Plug
     layout->addWidget(this->submit_button);
     layout->addWidget(this->start_button);
     layout->addWidget(this->select_eventid_button);
+
+
     widget->setLayout(layout);
-
+    
     setWidget(widget);
-
+    
     setVisible(false);
     setFloating(true);
     resize(300,300);
@@ -72,7 +74,7 @@ void MainWidget::printToLog(std::string message)
 void MainWidget::actualButtonClicked()
 {
 
-    time_t now = time(0);
+    /*time_t now = time(0); UNLOCKED VERSION
 
     tm *ltm = localtime(&now);
 
@@ -82,7 +84,7 @@ void MainWidget::actualButtonClicked()
     if (ltm->tm_mon > 2){
         printToLog("locked");
         return;
-    }
+    }*/
 
 
     this->label1->setText(this->lineedit->text());

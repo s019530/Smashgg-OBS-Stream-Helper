@@ -38,9 +38,12 @@ bool obs_module_load(void)
 
 	obs_frontend_add_dock(testing);
 
-	return true;
+	
+
+	return true;	
 
 }	
+
 
 
 void obs_module_unload(void)

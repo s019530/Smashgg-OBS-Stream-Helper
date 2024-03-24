@@ -160,6 +160,12 @@ std::vector<std::string> getSetData(std::string ID){
         std::string temp = makeRequest(data);
         string forprinting;
         forprinting.append("response: ").append(temp);
+
+        if (temp.find("We're working to restore all services as soon as possible. Please check back soon") > 1)
+        {
+            Names.push_back("-2");
+            return Names;
+        }
         obs_log(LOG_INFO, forprinting.c_str());
 
         Names = sortSetData(temp);    

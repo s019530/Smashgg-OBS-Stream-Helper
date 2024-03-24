@@ -15,7 +15,7 @@
 
 using namespace std;
 
-MainWidget::MainWidget(QWidget *parent) : QDockWidget("MonkeyBenQ's SmashGG Plugin", parent)
+MainWidget::MainWidget(QWidget *parent) : QDockWidget("MonkeyBenQ's SmashGG Plugin v1.1", parent)
 {
     this->isRecording = false;
     this->tourneyId = "";
@@ -228,7 +228,8 @@ void MainWidget::mainLoop()
     {       
         vector<string> parcedMatch = getSetData(this->tourneyId.toStdString());
         obs_log(LOG_INFO, parcedMatch[0].c_str());
-        if(parcedMatch != this->currentMatch)
+        
+        if((parcedMatch != this->currentMatch) && (parcedMatch[0] != "-2"))
         {
             if(inprogressrec == true) {
                 stopRecording(this->currentMatch);

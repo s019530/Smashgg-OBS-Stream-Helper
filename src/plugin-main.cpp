@@ -16,39 +16,31 @@ You should have received a copy of the GNU General Public License along
 with this program. If not, see <https://www.gnu.org/licenses/>
 */
 
-
+#include <MainWindow.hpp>
 #include <obs-module.h>
 #include <plugin-support.h>
 #include <QtWidgets>
 #include "obs-frontend-api.h"
-#include "MainWindow.hpp"
 #include <string>
-
 
 OBS_DECLARE_MODULE()
 OBS_MODULE_USE_DEFAULT_LOCALE(PLUGIN_NAME, "en-US")
 
 bool obs_module_load(void)
 {
-	obs_log(LOG_INFO, "plugin loaded successfully (version %s)",
-		PLUGIN_VERSION);
+	obs_log(LOG_INFO, "plugin loaded successfully (version %s)", PLUGIN_VERSION);
 
 	QWidget *main_window = (QWidget *)obs_frontend_get_main_window();
 	MainWidget *testing = new MainWidget(main_window);
 
+	#pragma warning(disable : 4996)
 	obs_frontend_add_dock(testing);
+	#pragma warning(default : 4996)
 
-	
-
-	return true;	
-
-}	
-
-
+	return true;
+}
 
 void obs_module_unload(void)
 {
 	obs_log(LOG_INFO, "plugin unloaded");
 }
-
-

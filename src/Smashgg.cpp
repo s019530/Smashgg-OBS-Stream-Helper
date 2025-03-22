@@ -111,7 +111,7 @@ std::string makeRequest(const char *query)
         cout << "start req" << endl;
         struct curl_slist *chunk = NULL;
 
-        chunk = curl_slist_append(chunk, "Authorization: Bearer 5b9b8a56ce95de3cfe8409e563237117");
+        chunk = curl_slist_append(chunk, "Authorization: Bearer 08912980d42c26234c2c76edacfa19a9");
         chunk = curl_slist_append(chunk, "Content-Type: application/json");
 
         std::string s;

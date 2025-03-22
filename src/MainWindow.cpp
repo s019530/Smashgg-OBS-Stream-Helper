@@ -1,4 +1,3 @@
-#include "MainWindow.hpp"
 #include <QtWidgets>
 #include <obs-module.h>
 #include "plugin-support.h"
@@ -11,11 +10,12 @@
 #include <future>
 #include <pthread.h>
 #include <qtconcurrentrun.h>
+#include <MainWindow.hpp>
 
 
 using namespace std;
 
-MainWidget::MainWidget(QWidget *parent) : QDockWidget("MonkeyBenQ's SmashGG Plugin v1.1", parent)
+MainWidget::MainWidget(QWidget *parent) : QDockWidget("MonkeyBenQ's SmashGG Plugin v1.2", parent)
 {
     this->isRecording = false;
     this->tourneyId = "";
